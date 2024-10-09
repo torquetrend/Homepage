@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start; /* Align items starting from the left */
+    justify-content: space-between; /* Space between logo and search/navigation */
     width: 100%;
 }
 
@@ -83,12 +83,20 @@ body {
     background-color: #00796b;
 }
 
+/* Center the navigation menu on desktop */
+@media (min-width: 1025px) {
+    .nav-buttons {
+        justify-content: center; /* Center the navigation menu on desktop */
+        width: 100%;
+    }
+}
+
 /* Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    margin-left: auto; /* Pushes the search bar to the far right */
+    margin-left: auto; /* Pushes the search bar to the far right on desktop */
 }
 
 .search-bar input {
@@ -114,211 +122,39 @@ body {
     background-color: #00796b;
 }
 
-/* Hero Section */
-.hero-section {
-    background: url('car-bg.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 50px;
-    color: #ffffff;
-}
-
-.hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.hero-button {
-    padding: 12px 30px;
-    background-color: #00bfa5;
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.hero-button:hover {
-    background-color: #00796b;
-}
-
-/* Content Sections */
-.content-section {
-    background-color: #1a1a1a;
-    padding: 60px 40px;
-    text-align: center;
-    color: #e0e0e0;
-    border-radius: 15px;
-    margin: 40px 20px;
-}
-
-.content-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: #00bfa5;
-}
-
-.content-grid {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.content-box {
-    background-color: #333;
-    border-radius: 15px;
-    padding: 30px;
-    width: 100%; /* Full width on mobile */
-    max-width: 350px;
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px;
-}
-
-.content-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
-}
-
-.btn-inside {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #00bfa5;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn-inside:hover {
-    background-color: #00796b;
-}
-
-/* Remove bullet points in the rankings section */
-.no-bullets {
-    list-style-type: none;  /* Remove bullets */
-    padding: 0;  /* Remove default padding */
-    margin: 0;   /* Remove default margin */
-}
-
-.no-bullets li {
-    margin-bottom: 5px;  /* Add spacing between list items */
-}
-
-/* Footer Section */
-.footer-futuristic {
-    background-color: #1a1a1a;
-    padding: 40px 20px;
-    color: #ffffff;
-    text-align: center;
-}
-
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.footer-column {
-    max-width: 300px;
-}
-
-.footer-column h4 {
-    color: #00bfa5;
-    margin-bottom: 15px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin: 10px 0;
-}
-
-.footer-column ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: #00bfa5;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-    color: #888888;
-    font-size: 0.9rem;
-}
-
-/* Responsive Styles */
-
 /* Mobile Styles (up to 768px) */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: row; /* Align logo and hamburger in a row */
+        flex-direction: column; /* Stack items vertically */
         align-items: center;
-        justify-content: space-between;
-    }
-
-    .nav-buttons {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .nav-buttons.active {
-        display: flex; /* Show on click */
-    }
-
-    .nav-buttons button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .hamburger-menu {
-        display: flex; /* Show hamburger on mobile */
     }
 
     .search-bar {
         width: 100%;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 10px;
+        margin-left: 0; /* Remove the margin that pushes it right on desktop */
     }
 
-    .hero-section {
-        padding: 20px;
-        height: auto;
+    .hamburger-menu {
+        display: flex; /* Show hamburger on mobile */
+        margin-bottom: 10px; /* Add some space between the menu and title */
     }
 
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .content-box {
+    .nav-buttons {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
         width: 100%;
-        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .nav-buttons.active {
+        display: flex; /* Show navigation menu when active */
+    }
+
+    .nav-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 

@@ -6,6 +6,7 @@ body {
     background: #111;
     color: #e0e0e0;
     font-size: 18px;
+    box-sizing: border-box; /* Ensure consistent box sizing */
 }
 
 /* Header Section */
@@ -26,6 +27,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .logo h1 {
@@ -38,7 +40,7 @@ body {
     display: flex;
     gap: 20px;
     list-style: none;  /* Remove bullet points */
-    padding: 0;         /* Ensure no padding */
+    padding: 0;        /* Remove padding */
 }
 
 .nav-buttons button {
@@ -217,4 +219,77 @@ body {
     margin-top: 20px;
     color: #888888;
     font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+
+/* Mobile Styles (up to 768px) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .nav-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .hero-section {
+        padding: 20px;
+        height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .content-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet and larger (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-box {
+        width: 45%; /* Two boxes per row on tablet */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop (1024px and larger) */
+@media (min-width: 1025px) {
+    .content-box {
+        width: 30%; /* Three boxes per row on desktop */
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+    }
 }

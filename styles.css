@@ -18,22 +18,27 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
-    position: relative; /* No longer fixed, scrolls away */
+    position: relative;
 }
 
 .header-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start; /* Align items starting from the left */
     width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
     color: #ffffff;
     font-size: 1.8rem;
     letter-spacing: 1.5px;
-    margin: 0;
+    margin-left: 10px; /* Space between hamburger menu and title */
 }
 
 /* Hamburger Menu for Mobile */
@@ -44,7 +49,6 @@ body {
     width: 30px;
     height: 25px;
     justify-content: space-between;
-    margin-right: 20px;
 }
 
 .hamburger-menu span {
@@ -84,6 +88,7 @@ body {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    margin-left: auto; /* Pushes the search bar to the far right */
 }
 
 .search-bar input {
@@ -266,8 +271,9 @@ body {
 /* Mobile Styles (up to 768px) */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
+        flex-direction: row; /* Align logo and hamburger in a row */
         align-items: center;
+        justify-content: space-between;
     }
 
     .nav-buttons {

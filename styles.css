@@ -200,6 +200,17 @@ body {
     background-color: #00796b;
 }
 
+/* Remove bullet points in the rankings section */
+.no-bullets {
+    list-style-type: none;  /* Remove bullets */
+    padding: 0;  /* Remove default padding */
+    margin: 0;   /* Remove default margin */
+}
+
+.no-bullets li {
+    margin-bottom: 5px;  /* Add spacing between list items */
+}
+
 /* Footer Section */
 .footer-futuristic {
     background-color: #1a1a1a;

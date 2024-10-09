@@ -13,16 +13,15 @@
     <!-- Header Section -->
     <header class="header-futuristic">
         <div class="header-content">
-            <!-- Hamburger Menu Icon for mobile (placed just before the h1 title) -->
+            <div class="logo">
+                <h1>TorqueTrend</h1>
+            </div>
+            <!-- Hamburger Menu Icon for mobile -->
             <div class="hamburger-menu" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="logo">
-                <h1>TorqueTrend</h1>
-            </div>
-            
             <nav>
                 <ul class="nav-buttons" id="nav-menu">
                     <li><button onclick="scrollToSection('home')">Home</button></li>
@@ -31,16 +30,11 @@
                     <li><button onclick="scrollToSection('reviews')">Reviews</button></li>
                 </ul>
             </nav>
-            
-            <!-- Search Bar -->
             <div class="search-bar">
                 <input type="text" id="search-bar" placeholder="Search...">
                 <button onclick="searchFunction()">Search</button>
             </div>
         </div>
-
-        <!-- Search results container -->
-        <div id="search-results" class="search-results"></div>
     </header>
 
     <!-- Hero Section -->
@@ -75,6 +69,7 @@
         <div class="content-grid">
             <div class="content-box">
                 <h3>Best SUVs of 2024</h3>
+                <!-- Removed bullet points by adding class no-bullets -->
                 <ul class="no-bullets">
                     <li><strong>1. Tesla Model X</strong></li>
                     <li>2. Ford Bronco</li>
@@ -84,6 +79,7 @@
             </div>
             <div class="content-box">
                 <h3>Best Sedans of 2024</h3>
+                <!-- Removed bullet points by adding class no-bullets -->
                 <ul class="no-bullets">
                     <li><strong>1. Toyota Camry</strong></li>
                     <li>2. Honda Accord</li>

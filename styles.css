@@ -6,7 +6,7 @@ body {
     background: #111;
     color: #e0e0e0;
     font-size: 18px;
-    box-sizing: border-box; /* Ensure padding and border sizing behaves predictably */
+    box-sizing: border-box;
 }
 
 /* Header Section */
@@ -16,11 +16,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    flex-wrap: wrap;
     box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    position: relative; /* No longer fixed, scrolls away */
 }
 
 .header-content {
@@ -35,14 +33,34 @@ body {
     color: #ffffff;
     font-size: 1.8rem;
     letter-spacing: 1.5px;
+    margin: 0;
 }
 
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none; /* Hidden by default for desktop */
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.hamburger-menu span {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+/* Navigation */
 .nav-buttons {
     display: flex;
     gap: 15px;
-    list-style: none;  /* Remove bullet points */
-    padding: 0;        /* Remove padding */
-    flex-wrap: wrap;   /* Allow buttons to wrap on smaller screens */
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
 }
 
 .nav-buttons button {
@@ -194,7 +212,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    justify-content: center; /* Center the columns on mobile */
+    justify-content: center;
     margin-bottom: 30px;
 }
 
@@ -208,8 +226,8 @@ body {
 }
 
 .footer-column ul {
-    list-style: none;  /* Remove bullet points */
-    padding: 0;        /* Remove padding */
+    list-style: none;
+    padding: 0;
 }
 
 .footer-column ul li {
@@ -238,34 +256,43 @@ body {
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
-        align-items: center; /* Center elements on mobile */
+        align-items: center;
     }
 
     .nav-buttons {
-        flex-direction: column; /* Stack buttons vertically */
+        display: none; /* Hidden by default */
+        flex-direction: column;
         width: 100%;
         text-align: center;
         margin-top: 10px;
     }
 
+    .nav-buttons.active {
+        display: flex; /* Show on click */
+    }
+
     .nav-buttons button {
-        width: 100%; /* Full width buttons */
+        width: 100%;
         margin-bottom: 10px;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger on mobile */
     }
 
     .search-bar {
         width: 100%;
-        justify-content: center; /* Center the search bar */
+        justify-content: center;
         margin-top: 15px;
     }
 
     .hero-section {
         padding: 20px;
-        height: auto; /* Adjust height */
+        height: auto;
     }
 
     .hero-content h1 {
-        font-size: 1.8rem; /* Smaller font on mobile */
+        font-size: 1.8rem;
     }
 
     .hero-content p {
@@ -273,7 +300,7 @@ body {
     }
 
     .content-box {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
         margin-bottom: 20px;
     }
 }
@@ -281,7 +308,7 @@ body {
 /* Tablet and larger (768px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .content-box {
-        width: 45%; /* Two boxes per row on tablet */
+        width: 45%;
     }
 
     .hero-content h1 {
@@ -296,7 +323,7 @@ body {
 /* Desktop (1024px and larger) */
 @media (min-width: 1025px) {
     .content-box {
-        width: 30%; /* Three boxes per row on desktop */
+        width: 30%;
     }
 
     .hero-content h1 {

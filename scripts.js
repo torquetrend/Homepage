@@ -94,5 +94,10 @@ function monitorPerformanceMetrics() {
 
 monitorPerformanceMetrics();
 
-// Calling the performance monitoring function
-monitorPerformanceMetrics();
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navContainer = document.querySelector('.nav-container');
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('active');
+  navContainer.classList.toggle('active');
+});

@@ -192,28 +192,33 @@ body {
 
   .nav-container {
     display: none; /* Hidden navigation for mobile, activated by hamburger */
+    flex-direction: column; /* Ensure the items are stacked vertically */
+    align-items: center;
+    gap: 15px; /* Spacing between nav items */
   }
 
+  /* Show hamburger menu icon on smaller screens */
   .hamburger-menu {
     display: flex;
   }
 
+  /* Toggle the hamburger icon into 'X' when active */
   .hamburger-menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
   .hamburger-menu.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Hide the middle line */
   }
 
   .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  /* Mobile Menu */
+  /* Mobile Menu Styles */
   .nav-container.active {
     display: flex;
-    position: fixed;
+    position: fixed; /* Fixed to ensure it stays in place on scroll */
     top: 70px;
     left: 0;
     right: 0;
@@ -223,13 +228,18 @@ body {
     gap: 15px;
     padding: 20px;
     box-shadow: var(--box-shadow-strong);
+    z-index: 9999; /* Ensure it stays on top */
   }
 
+  /* Adjust the nav buttons for mobile */
   .nav-buttons {
     flex-direction: column;
     gap: 10px;
+    width: 100%; /* Ensure the buttons take full width */
+    text-align: center; /* Center the text */
   }
 
+  /* Responsive Search Bar */
   .search-bar {
     width: 100%;
     justify-content: center;
